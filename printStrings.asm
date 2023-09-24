@@ -4,8 +4,8 @@
 ; It does by looping over the strings, until it hits 0
 
 section .data
-    msg db "Hello world!", 0
-    text db "Hello, chatGPT!", 0
+    msg db "Hello world!", 0ah
+    text db "Hello, chatGPT!"
 
 section .text
     global _start

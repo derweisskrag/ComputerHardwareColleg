@@ -5,7 +5,7 @@
 
 section .data
     msg db "Hello world!", 0ah
-    text db "Hello, chatGPT!"
+    text db "Hello, chatGPT!", 0ah
 
 section .text
     global _start

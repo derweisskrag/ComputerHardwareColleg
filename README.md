@@ -1,5 +1,13 @@
 # Computer Hardware Tartu College Course
-Here I store, probably, temporarily, my HW related to Computer Hardware course at Tartu College
+
+## Purpose:
+
+**Homework assignment**: In this repository, I published all of my homework related to the courses:
+
+1. **Computer Hardware**,
+2. **Databases**
+
+## Useful information:
 
 You can test my code here: https://www.mycompiler.io/new/asm-x86_64
 

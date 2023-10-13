@@ -13,7 +13,7 @@ or you can create a Rust project.
 4. Go to "src" directory and open up "main.rc' file: `cd my-project/src`
 5. Compile or run your app: `cargo build`, and then `cargo run main.rs` or `rustc main.rs` to compile.
 6. When the executable file is produced (on Linux: `ld -o file-name.o file-name` where file-name.o is compiled),
-   meaning that you can `rustc main.rs -o main.o`. It is not recommend, as `cargo build` and `cargo run` is preferred.
+   meaning that you can `rustc main.rs -o main.o`. It is not recommended, as `cargo build` and `cargo run` is preferred.
 7. Execute your file.
 8. If you want to add libraries such as crates, you can explore `.toml` file (on terminal `cargo add <crate name>`). You
-   can find crates here: (Rust crates)[https://crates.io/]. For example, `cargo add serde`.
+   can find crates here: [Rust crates](https://crates.io/). For example, `cargo add serde`.

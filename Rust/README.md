@@ -17,3 +17,10 @@ or you can create a Rust project.
 7. Execute your file.
 8. If you want to add libraries such as crates, you can explore `.toml` file (on terminal `cargo add <crate name>`). You
    can find crates here: [Rust crates](https://crates.io/). For example, `cargo add serde`.
+
+```Rust
+fn main(){
+   let response: &str = "Hello, world!";
+   println!("{}", response);
+}
+```

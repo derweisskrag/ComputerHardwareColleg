@@ -16,4 +16,4 @@ or you can create a Rust project.
    meaning that you can `rustc main.rs -o main.o`. It is not recommend, as `cargo build` and `cargo run` is preferred.
 7. Execute your file.
 8. If you want to add libraries such as crates, you can explore `.toml` file (on terminal `cargo add <crate name>`). You
-   can find crates here: https://crates.io/. For example, `cargo add serde`.
+   can find crates here: (Rust crates)[https://crates.io/]. For example, `cargo add serde`.

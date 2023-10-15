@@ -8,7 +8,10 @@
 2. **Databases**,
 3. **Daemons**,
 4. **Programming languages:** Please, look at the Python directory and enjoy my articles,
-5. **Some algorithms:** Sorting, traversing, leetcode problems, etc. 
+5. **Some algorithms:** Sorting, traversing, leetcode problems, etc.
+
+Please, notice that my daemon paper uses Rust, C++, JS, and Python, but I do not teach those languages; yet,
+explain some concepts in the Python directory and try to write as clear and readable code as possible.
 
 ## Useful information:
 

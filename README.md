@@ -7,9 +7,8 @@
 1. **Computer Hardware**,
 2. **Databases**,
 3. **Daemons**,
-4. **Programming languages:** Please, look at Python directory and enjoy my articles,
-5. **Some algorithms:**
-          1. f
+4. **Programming languages:** Please, look at the Python directory and enjoy my articles,
+5. **Some algorithms:** Sorting, traversing, leetcode problems, etc. 
 
 ## Useful information:
 

@@ -9,7 +9,7 @@
 3. **Daemons**,
 4. **Programming languages:** Please, look at Python directory and enjoy my articles,
 5. **Some algorithms:**
-          a. f
+          1. f
 
 ## Useful information:
 

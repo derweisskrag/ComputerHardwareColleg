@@ -9,9 +9,7 @@
 3. **Daemons**,
 4. **Programming languages:** Please, look at Python directory and enjoy my articles,
 5. **Some algorithms:**
-          a. Sorting
-          b. Traversing
-          c. Leetcode problems to share with
+          a. f
 
 ## Useful information:
 

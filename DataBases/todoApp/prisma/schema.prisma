@@ -9,3 +9,155 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User{
+	id             Int          @default(autoincrement())
+	name           String       @default("Admin")
+	surname        String
+	email          String       @unique
+	passwordHash   String       //string because we store hash
+
+	createdAt      DateTime     @default(now())
+	updatedAt      DateTime     @updatedAt
+
+	// user has
+	todos          Todo[]
+	projects       Project[]
+	comment        Comment[]
+	notifications  Notification[]
+
+  houses         House[]
+
+	posts          Post[]
+  labels         Label[]
+  histories      History[]
+
+	@@index([id, createdAt])
+  @@id([id])
+}
+
+model Post{
+	id        Int      @id @default(autoincrement())
+	author    User     @relation(fields: [authorId], references: [id])
+	authorId  Int
+}
+
+model Todo{
+  id          Int       @id @default(autoincrement())
+  title       String
+  completed   Boolean   @default(false)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id])
+  comments    Comment[]
+  attachments Attachment[]
+  projects    Project[]
+  histories   History[]
+
+}
+
+model Project{
+  id        Int        @id @default(autoincrement())
+  name      String
+  
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  userId    Int
+  user      User       @relation(fields: [userId], references: [id])
+  todos     Todo[]
+
+  @@index([id, userId, createdAt])
+}
+
+model Comment{
+  id        Int        @id @default(autoincrement())
+  content   String     
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  userId    Int
+  todoId    Int
+  User      User       @relation(fields: [userId], references: [id])
+  Todo      Todo       @relation(fields: [todoId], references: [id])
+
+}
+
+model Notification{
+  id        Int        @id @default(autoincrement())
+  content   String     
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  userId    Int
+  User      User       @relation(fields: [userId], references: [id])
+}
+
+model Label {
+  id        Int        @id @default(autoincrement())
+  name      String
+  color     String    
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  userId    Int
+  User      User       @relation(fields: [userId], references: [id])
+}
+
+model Attachment{
+  id        Int        @id @default(autoincrement())
+  fileUrl   String
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  todoId    Int
+  Todo      Todo       @relation(fields: [todoId], references: [id])
+} 
+
+model History{
+  id        Int        @id @default(autoincrement())
+  action    String
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+
+  userId    Int
+  todoId    Int
+  User      User       @relation(fields: [userId], references: [id])
+  Todo      Todo       @relation(fields: [todoId], references: [id])
+}
+
+model House{
+  id        Int        @id @default(autoincrement())
+  name      String
+  address   String
+  prices    Price[]
+
+  userId    Int
+  owner     User       @relation(fields: [userId], references: [id])
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([id, createdAt])
+}
+
+model Price{
+  id        Int        @id @default(autoincrement())
+  value     Float
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  houseId  Int
+  house    House       @relation(fields: [houseId], references: [id])
+
+}
